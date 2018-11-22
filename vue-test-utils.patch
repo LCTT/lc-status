@@ -1,0 +1,10 @@
+--- /tmp/vue-test-utils.js	2018-11-22 13:08:06.066950992 -0800
++++ node_modules/@vue/test-utils/dist/vue-test-utils.js	2018-11-22 17:47:10.946264318 -0800
+@@ -2742,6 +2742,7 @@
+ 
+   Object.keys(components).forEach(function (c) {
+     var comp = components[c];
++    if (comp === component) return;
+     var shouldExtendComponent =
+       (shouldExtend(comp) &&
+       !excludedComponents[c]) ||
