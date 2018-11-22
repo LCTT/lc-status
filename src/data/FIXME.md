@@ -1,0 +1,1 @@
+- [ ] Use JSON loader for static data

@@ -1,16 +1,17 @@
 <template lang='pug'>
 v-app
-  v-toolbar(app)
-    v-toolbar-title.headline.text-uppercase
-      span Vuetify
-      span.font-weight-light MATERIAL DESIGN
-    v-toolbar-items
-      v-btn(flat to='/') Home
-      v-btn(flat to='/about') About
-    v-spacer
-    v-btn(flat href='https://github.com/vuetifyjs/vuetify/releases/latest' target='_blank')
-      span.mr-2 Latest Release
-      v-icon mdi-open-in-new
+  lc-nav-bar
   v-content
+    lc-nav-tab
     router-view
 </template>
+
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+import LcNavBar from '@/components/LcNavBar.vue'
+import LcNavTab from '@/components/LcNavTab.vue'
+
+@Component({components: {LcNavBar, LcNavTab}})
+class App extends Vue {}
+export default App
+</script>
