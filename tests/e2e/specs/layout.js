@@ -5,7 +5,7 @@ module.exports = {
       .waitForElementVisible('#app', 5000)
       .assert.elementCount('.lc-nav-bar', 1)
       .assert.elementCount('.lc-nav-bar .v-toolbar__title.headline', 1)
-      .assert.containsText('.lc-nav-bar .v-toolbar__title.headline', 'LINUX.CN TRANSLATE TEAM')
+      .assert.containsText('.lc-nav-bar .v-toolbar__title.headline', 'LINUX.CN TRANSLATION TEAM')
       .end()
   },
 

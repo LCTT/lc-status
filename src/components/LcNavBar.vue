@@ -1,7 +1,7 @@
 <template lang='pug'>
 v-toolbar.lc-nav-bar(flat app)
   v-toolbar-title.headline.text-uppercase
-    | #[span Linux.cn ] #[span.font-weight-light Translate Team]
+    | #[span Linux.cn ] #[span.font-weight-light Translation Team]
   v-toolbar-items
     v-btn(
       v-for="link in links"

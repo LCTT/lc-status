@@ -11,7 +11,7 @@ describe('LcNavBar.vue', () => {
     expect(titleWrapperArray).to.have.lengthOf(1)
 
     const titleContent = titleWrapperArray.at(0).text()
-    expect(titleContent).to.equals('Linux.cn Translate Team')
+    expect(titleContent).to.equals('Linux.cn Translation Team')
   })
 
   it('should render buttons for links defined in data', () => {
