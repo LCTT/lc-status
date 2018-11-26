@@ -3,12 +3,12 @@ module.exports = {
     mocha: true
   },
   plugins: [
-    "chai-friendly"
+    'chai-friendly'
   ],
   overrides: [{
     files: '*.spec.ts',
     rules: {
       'chai-friendly/no-unused-expressions': 'off'
-    },
+    }
   }]
 }
