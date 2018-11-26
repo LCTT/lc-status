@@ -8786,6 +8786,11 @@ symbol-tree@^3.2.2:
   resolved "https://registry.yarnpkg.com/symbol-tree/-/symbol-tree-3.2.2.tgz#ae27db38f660a7ae2e1c3b7d1bc290819b8519e6"
   integrity sha1-rifbOPZgp64uHDt9G8KQgZuFGeY=
 
+symlink-webpack-plugin@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/symlink-webpack-plugin/-/symlink-webpack-plugin-0.1.0.tgz#d528c3158bf5e7bc7e0f6767c0a2cab556238679"
+  integrity sha512-QOSm8SPbUPNd+0tW01D9BFYD37wYDjyDTpGj+8NH+uODYEHyqROgPpwu091ejt2QC+tZbUgOjtACkKFFzol1sQ==
+
 table@4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/table/-/table-4.0.2.tgz#a33447375391e766ad34d3486e6e2aedc84d2e36"
