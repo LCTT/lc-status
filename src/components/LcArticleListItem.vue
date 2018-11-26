@@ -29,7 +29,8 @@ class LcArticleListItem extends Vue {
   }
 
   get filename () {
-    return this.article.path.split('/').pop()
+    const basename = this.article.path.split('/').pop()
+    return basename && basename!.replace(/^\d{8} |\.md$/g, '')
   }
 
   get author () {
