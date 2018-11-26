@@ -1,10 +1,9 @@
-import moment from 'moment'
 import { Module, VuexModule, Mutation, Action } from 'vuex-module-decorators'
 
 import { ArticleBase, ArticleType, ArticleList } from '@/types/articles.type'
 import { parseArticles } from '@/utilities/articles'
 
-@Module
+@Module({ namespaced: true })
 export default class Status extends VuexModule {
   new: ArticleBase[] = []
   translating: ArticleBase[] = []

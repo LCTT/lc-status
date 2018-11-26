@@ -15,4 +15,4 @@ new Vue({
   render: h => h(App)
 }).$mount('#app')
 
-store.dispatch('update')
+store.dispatch('status/update')

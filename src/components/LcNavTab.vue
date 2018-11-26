@@ -10,18 +10,23 @@ v-container.lc-nav-tab(v-bind:class="{ lock: isLock }" fluid)
           :to="route.path"
         ) {{route.meta.title}}
     v-flex(shrink)
-      v-btn(flat small icon @click="isLock = !isLock")
+      v-btn(flat small icon @click="toggleLock()")
         v-icon(v-if="isLock" small) mdi-lock
         v-icon(v-else small) mdi-lock-open
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
+import { namespace } from 'vuex-class'
 import routes from '@/data/routes'
+
+const siteModule = namespace('site')
 
 @Component
 class LcNavTab extends Vue {
-  isLock = true // TODO: store in vuex (persistence as site setting)
+  @siteModule.State('lockNavTab') isLock: any
+  @siteModule.Action('toggleNavTabLock') toggleLock: any
+
   routes = routes
 }
 export default LcNavTab
