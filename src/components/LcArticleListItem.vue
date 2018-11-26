@@ -1,10 +1,12 @@
 <template lang='pug'>
-v-list-tile.lc-article-list-item
+v-list-tile.lc-article-list-item(:class="type")
   v-list-tile-content
     v-container.grid-list-lg
       v-layout(align-center)
-        v-flex.id(shrink) {{id}}
-        v-flex.days(shrink) {{days}}
+        v-flex.id(v-if="type == 'translating'" shrink) {{id}}
+        v-flex.shortdate(v-if="type == 'new'" shrink) {{date}}
+        v-flex.days(v-if="type == 'translating'" shrink) {{days}} 天以前
+        v-flex.fulldate(v-if="type == 'mostWanted'" shrink) {{date}}
         v-flex.filename(shrink): a(:href="viewUrl" target="_blank") {{filename}}
         v-flex.end(grow)
           .author(v-if="asTranslating.author") {{author}}
@@ -12,6 +14,8 @@ v-list-tile.lc-article-list-item
 </template>
 
 <script lang="ts">
+import moment from 'moment'
+
 import { Component, Vue, Prop } from 'vue-property-decorator'
 import { ArticleBase, ArticleTranslating } from '@/types/articles.type'
 
@@ -28,7 +32,16 @@ class LcArticleListItem extends Vue {
   }
 
   get days () {
-    return this.article.time.fromNow()
+    return moment().diff(this.article.time, 'days')
+  }
+
+  get date () {
+    switch (this.type) {
+      case 'new':
+        return this.article.time.format('MM - DD')
+      case 'mostWanted':
+        return this.article.time.format('YYYY/MM/DD')
+    }
   }
 
   get filename () {
@@ -64,10 +77,15 @@ export default LcArticleListItem
       text-overflow ellipsis
       font-weight 300
       &.id
-        text-align right
         min-width 3em
+        text-align right
+      &.shortdate
+        min-width 4em
       &.days
-        min-width 8em
+        min-width 5.5em
+        text-align right
+      &.fulldate
+        min-width 6.5em
       &.filename
         font-weight 400
       &.end
