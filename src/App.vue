@@ -17,7 +17,7 @@ export default App
 </script>
 
 <style lang="stylus">
-@import './const'
+@import './common'
 
 #app
   // override link color

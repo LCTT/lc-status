@@ -65,8 +65,15 @@ export default LcArticleListItem
 </script>
 
 <style lang="stylus" scoped>
+@import '../common'
+
 .lc-article-list-item
   color #666
+  >>>.v-list__tile
+    +mobile()
+      height auto
+      .layout
+        flex-wrap wrap
   &:nth-child(2n+1)
     color #444
     background-color #00000006
@@ -79,15 +86,28 @@ export default LcArticleListItem
       &.id
         min-width 3em
         text-align right
+        +mobile()
+          display none
       &.shortdate
         min-width 4em
       &.days
         min-width 5.5em
         text-align right
+        +mobile()
+          order 2
       &.fulldate
         min-width 6.5em
       &.filename
         font-weight 400
+        +mobile()
+          width 100%
+          order -1
       &.end
         text-align right
+        +mobile()
+          >.author
+            text-align left
+            order 1
+          >.claim
+            display none
 </style>

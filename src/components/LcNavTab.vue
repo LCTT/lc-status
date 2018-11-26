@@ -28,7 +28,7 @@ export default LcNavTab
 </script>
 
 <style lang="stylus" scoped>
-@import '../const'
+@import '../common'
 
 .lc-nav-tab
   width 100%
