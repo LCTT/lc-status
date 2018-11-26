@@ -15,3 +15,13 @@ import LcNavTab from '@/components/LcNavTab.vue'
 class App extends Vue {}
 export default App
 </script>
+
+<style lang="stylus">
+@import './const'
+
+#app
+  .lc-nav-tab.lock
+    position fixed
+    &+*
+      margin-top nav-tab-height
+</style>
