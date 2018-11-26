@@ -20,6 +20,9 @@ export default App
 @import './const'
 
 #app
+  // override link color
+  a
+    color #666
   .lc-nav-tab.lock
     position fixed
     &+*

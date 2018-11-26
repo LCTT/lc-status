@@ -5,15 +5,17 @@ v-list-tile.lc-article-list-item
       v-layout(align-center)
         v-flex.id(shrink) {{id}}
         v-flex.days(shrink) {{days}}
-        v-flex.filename(shrink) {{filename}}
+        v-flex.filename(shrink): a(:href="viewUrl" target="_blank") {{filename}}
         v-flex.end(grow)
           .author(v-if="asTranslating.author") {{author}}
-          .claim(v-else): v-btn(depressed small :href="editUrl") 认领
+          .claim(v-else): v-btn(depressed small :href="editUrl" target="_blank") 认领
 </template>
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator'
 import { ArticleBase, ArticleTranslating } from '@/types/articles.type'
+
+const URL_PREFIX = 'https://github.com/LCTT/TranslateProject'
 
 @Component
 class LcArticleListItem extends Vue {
@@ -37,8 +39,12 @@ class LcArticleListItem extends Vue {
     return this.asTranslating.author
   }
 
+  get viewUrl () {
+    return `${URL_PREFIX}/blob/master/${this.article.path}`
+  }
+
   get editUrl () {
-    return `https://github.com/LCTT/TranslateProject/edit/master/${this.article.path}`
+    return `${URL_PREFIX}/edit/master/${this.article.path}`
   }
 }
 export default LcArticleListItem
