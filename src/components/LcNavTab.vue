@@ -1,5 +1,5 @@
 <template lang='pug'>
-v-tabs.lc-nav-tab(fixed-tabs)
+v-tabs.lc-nav-tab(fixed-tabs slider-color="#999")
   v-tab(
     v-for="route in routes"
     v-if="route.meta && route.meta.title"
