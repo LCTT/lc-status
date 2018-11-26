@@ -42,5 +42,9 @@ export default LcNavBar
   .headline
     +desktop()
       margin-left 0
+    @media (min-width: 370px) and (max-width: 479px)
+      font-size 18px !important
+    @media (max-width: 369px)
+      font-size 15px !important
     margin-right 1em
 </style>
