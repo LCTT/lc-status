@@ -12,7 +12,7 @@ v-list.lc-article-list
 import moment from 'moment'
 import { Component, Vue, Prop } from 'vue-property-decorator'
 import LcArticleListItem from './LcArticleListItem.vue'
-import { ArticleList, ArticleBase } from './types/articles.type'
+import { ArticleList, ArticleBase } from '@/types/articles.type'
 
 @Component({components: {LcArticleListItem}})
 class LcArticleList extends Vue {

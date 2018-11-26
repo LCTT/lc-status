@@ -13,7 +13,7 @@ v-list-tile.lc-article-list-item
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator'
-import { ArticleBase, ArticleTranslating } from './types/articles.type'
+import { ArticleBase, ArticleTranslating } from '@/types/articles.type'
 
 @Component
 class LcArticleListItem extends Vue {

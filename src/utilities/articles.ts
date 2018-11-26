@@ -1,6 +1,6 @@
 import moment from 'moment'
 
-import { ArticleBase, ArticleTranslating, ArticleType } from '../types/articles.type'
+import { ArticleBase, ArticleTranslating, ArticleType } from '@/types/articles.type'
 
 export const parseArticles = (rawArticles: Array<any>, type: ArticleType): Array<ArticleBase> => {
   const ret:Array<ArticleBase> = []

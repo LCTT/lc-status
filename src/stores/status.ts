@@ -1,8 +1,8 @@
 import moment from 'moment'
 import { Module, VuexModule, Mutation, Action } from 'vuex-module-decorators'
 
-import { ArticleBase, ArticleType, ArticleList } from '@/components/types/articles.type'
-import { parseArticles } from '@/components/utilities/articles'
+import { ArticleBase, ArticleType, ArticleList } from '@/types/articles.type'
+import { parseArticles } from '@/utilities/articles'
 
 @Module
 export default class Status extends VuexModule {

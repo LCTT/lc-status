@@ -6,8 +6,8 @@
 <script lang='ts'>
 import { Component, Vue } from 'vue-property-decorator'
 
-import { ArticleType } from '@/components/types/articles.type'
-import { parseArticles } from '@/components/utilities/articles'
+import { ArticleType } from '@/types/articles.type'
+import { parseArticles } from '@/utilities/articles'
 import LcArticleList from '@/components/LcArticleList.vue'
 
 @Component({components: {LcArticleList}})
