@@ -3,6 +3,7 @@ v-list.lc-article-list
   lc-article-list-item(
     v-for="(article, index) in sortedArticles"
     :key="index+article.path"
+    :type="type"
     :id="index+1"
     :article="article"
   )
@@ -16,10 +17,10 @@ import { ArticleList, ArticleBase } from '@/types/articles.type'
 
 @Component({components: {LcArticleListItem}})
 class LcArticleList extends Vue {
-  @Prop(Array) articles!: ArticleBase[]
+  @Prop(String) type!: string
 
   get sortedArticles () {
-    return this.articles
+    return (this.$store.state.status[this.type] as ArticleBase[])
       .sort((left, right) => left.time.isAfter(right.time) ? 1 : -1)
   }
 }

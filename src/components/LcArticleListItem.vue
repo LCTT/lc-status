@@ -19,6 +19,7 @@ const URL_PREFIX = 'https://github.com/LCTT/TranslateProject'
 
 @Component
 class LcArticleListItem extends Vue {
+  @Prop(String) type!: string
   @Prop(Number) id!: number
   @Prop(Object) article!: ArticleBase
 
