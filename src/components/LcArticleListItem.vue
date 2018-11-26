@@ -3,10 +3,10 @@ v-list-tile.lc-article-list-item
   v-list-tile-content
     v-container.grid-list-lg
       v-layout(align-center)
-        v-flex(shrink).id {{id}}
-        v-flex(shrink).days {{days}}
-        v-flex(shrink).filename {{filename}}
-        v-flex(grow).end
+        v-flex.id(shrink) {{id}}
+        v-flex.days(shrink) {{days}}
+        v-flex.filename(shrink) {{filename}}
+        v-flex.end(grow)
           .author(v-if="asTranslating.author") {{author}}
           .claim(v-else): v-btn(depressed small :href="editUrl") 认领
 </template>
