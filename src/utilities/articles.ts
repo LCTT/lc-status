@@ -16,5 +16,5 @@ export const parseArticles = (rawArticles: Array<any>, type: ArticleType): Array
     }
   })
 
-  return ret
+  return ret.sort((left, right) => left.time.isAfter(right.time) ? 1 : -1)
 }

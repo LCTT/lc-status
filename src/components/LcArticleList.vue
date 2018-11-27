@@ -20,8 +20,7 @@ class LcArticleList extends Vue {
   @Prop(String) type!: string
 
   get sortedArticles () {
-    return (this.$store.state.status[this.type] as ArticleBase[])
-      .sort((left, right) => left.time.isAfter(right.time) ? 1 : -1)
+    return this.$store.state.status[this.type] as ArticleBase[]
   }
 }
 export default LcArticleList

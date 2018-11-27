@@ -14,16 +14,8 @@ export default class Status extends VuexModule {
   updateStatus (newStatus: ArticleList) {
     this.translating = parseArticles(newStatus.translating, ArticleType.TRANSLATING)
 
-    const newArticles = parseArticles(newStatus.unselected, ArticleType.NEW)
-    this.new = []
-    this.mostWanted = []
-
-    newArticles.forEach(article => {
-      const target = moment().diff(article.time, 'days') > 100
-        ? this.mostWanted
-        : this.new
-      target.push(article)
-    })
+    this.new = parseArticles(newStatus.unselected, ArticleType.NEW)
+    this.mostWanted = this.new.splice(0, Math.round(this.new.length * 0.2))
   }
 
   @Action
